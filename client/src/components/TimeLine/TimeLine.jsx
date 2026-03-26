@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ChevronDown, ChevronUp, TrendingUp, TrendingDown, Minus } from "lucide-react";
-import "./Timeline.css";
+import "./TimeLine.css";
 
 function getSentimentClass(sentiment) {
   if (sentiment >= 0.3) return "positive";
