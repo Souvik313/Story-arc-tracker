@@ -1,0 +1,146 @@
+/* ── Wrapper ── */
+
+.sentiment-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: #ffffff;
+  border: 1px solid #e4eaf2;
+  border-radius: 14px;
+  padding: 24px 20px 16px;
+}
+
+/* ── Summary pills ── */
+
+.sentiment-summary {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.sentiment-pill {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  font-family: sans-serif;
+  font-weight: 500;
+  padding: 5px 14px;
+  border-radius: 20px;
+}
+
+.sentiment-pill-positive {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.sentiment-pill-negative {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.sentiment-pill-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #16a34a;
+  flex-shrink: 0;
+}
+
+.sentiment-dot-negative {
+  background: #dc2626;
+}
+
+/* ── Chart container ── */
+
+.sentiment-chart-container {
+  width: 100%;
+}
+
+/* ── Custom tooltip ── */
+
+.sentiment-tooltip {
+  background: #ffffff;
+  border: 1px solid #e4eaf2;
+  border-radius: 10px;
+  padding: 12px 14px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  max-width: 240px;
+}
+
+.sentiment-tooltip-date {
+  font-size: 11px;
+  color: #94a3b8;
+  font-family: sans-serif;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.sentiment-tooltip-headline {
+  font-size: 13px;
+  color: #0f172a;
+  font-family: 'Georgia', serif;
+  line-height: 1.45;
+  margin-bottom: 8px;
+}
+
+.sentiment-tooltip-score {
+  font-size: 12px;
+  font-family: sans-serif;
+  font-weight: 700;
+}
+
+/* ── Y axis context labels ── */
+
+.sentiment-y-labels {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px 0 40px;
+}
+
+.sentiment-y-positive,
+.sentiment-y-neutral,
+.sentiment-y-negative {
+  font-size: 11px;
+  font-family: sans-serif;
+  font-weight: 500;
+}
+
+.sentiment-y-positive {
+  color: #16a34a;
+}
+
+.sentiment-y-neutral {
+  color: #94a3b8;
+}
+
+.sentiment-y-negative {
+  color: #dc2626;
+}
+
+/* ── Empty state ── */
+
+.sentiment-empty {
+  font-size: 14px;
+  color: #94a3b8;
+  font-family: sans-serif;
+  padding: 32px 0;
+  text-align: center;
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 480px) {
+  .sentiment-wrapper {
+    padding: 16px 12px 12px;
+  }
+
+  .sentiment-y-labels {
+    padding: 0 8px;
+  }
+
+  .sentiment-pill {
+    font-size: 11px;
+    padding: 4px 10px;
+  }
+}

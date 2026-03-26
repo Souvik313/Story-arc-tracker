@@ -1,0 +1,128 @@
+{
+  "summary": "A major listed infrastructure company has filed for insolvency after prolonged debt stress, triggering sharp moves in lenders, bond spreads, and supplier-linked stocks. The story has shifted from speculation to legal process, and the next phase depends on claim validation, creditor hierarchy, and resolution timelines.",
+  "timeline": [
+    {
+      "date": "2026-03-23",
+      "headline": "Company files bankruptcy petition",
+      "detail": "The company files under insolvency proceedings after failing to meet repayment obligations on multiple debt facilities.",
+      "sentiment": -0.85,
+      "source": "ET Breaking: Bankruptcy Filing Confirmed"
+    },
+    {
+      "date": "2026-03-23",
+      "headline": "Stock hits lower circuit",
+      "detail": "Shares lock at the lower circuit as investors price in equity value impairment and legal uncertainty around resolution.",
+      "sentiment": -0.9,
+      "source": "ET Markets Live"
+    },
+    {
+      "date": "2026-03-23",
+      "headline": "Lender stocks trade mixed",
+      "detail": "Banks with disclosed exposure correct mildly, while better-capitalized lenders recover intraday on provisioning comfort narratives.",
+      "sentiment": -0.35,
+      "source": "ET Banking Watch"
+    },
+    {
+      "date": "2026-03-23",
+      "headline": "Bond spreads widen for peers",
+      "detail": "Credit spreads in related infra names widen as investors reassess refinancing risk across the sector.",
+      "sentiment": -0.55,
+      "source": "ET Debt & Credit Desk"
+    },
+    {
+      "date": "2026-03-24",
+      "headline": "Interim resolution professional appointed",
+      "detail": "A court-appointed professional takes operational control and initiates claims collation from financial and operational creditors.",
+      "sentiment": -0.15,
+      "source": "ET Legal Tracker"
+    },
+    {
+      "date": "2026-03-24",
+      "headline": "Government seeks continuity safeguards",
+      "detail": "Authorities push for continuity in critical project execution to avoid broader supply-chain and employment disruption.",
+      "sentiment": 0.05,
+      "source": "ET Policy Wire"
+    }
+  ],
+  "players": [
+    {
+      "name": "Debtor Company",
+      "role": "Insolvency applicant",
+      "stance": "negative",
+      "note": "Filed for insolvency after debt servicing breakdown and liquidity exhaustion."
+    },
+    {
+      "name": "Consortium Lenders",
+      "role": "Financial creditors",
+      "stance": "neutral",
+      "note": "Likely to drive committee decisions on haircut acceptance and resolution timeline."
+    },
+    {
+      "name": "Operational Creditors",
+      "role": "Suppliers and contractors",
+      "stance": "negative",
+      "note": "Face cash-flow strain due to delayed receivables and uncertain recovery rates."
+    },
+    {
+      "name": "Interim Resolution Professional",
+      "role": "Process administrator",
+      "stance": "neutral",
+      "note": "Responsible for claim verification, operations continuity, and bidder process design."
+    },
+    {
+      "name": "Sector Peers",
+      "role": "Comparable infrastructure issuers",
+      "stance": "controversial",
+      "note": "Some may be punished by contagion despite stronger balance sheets."
+    }
+  ],
+  "contrarian_views": [
+    {
+      "angle": "Contagion may be overstated for high-quality peers",
+      "reasoning": "Initial sector-wide selloffs often ignore capital structure differences. Stronger issuers with low leverage can recover faster than headline panic suggests."
+    },
+    {
+      "angle": "Operational continuity may preserve enterprise value",
+      "reasoning": "If projects remain active during insolvency, buyer interest and eventual recoveries can be materially higher than distressed-market assumptions."
+    },
+    {
+      "angle": "Retail narratives miss creditor hierarchy realities",
+      "reasoning": "Recovery outcomes differ dramatically across secured lenders, unsecured creditors, and equity holders. Simplistic 'recovery coming' narratives can mislead non-expert users."
+    }
+  ],
+  "what_to_watch": [
+    {
+      "signal": "Verified creditor claims and admitted liability size",
+      "implication": "Defines the true recovery pool and sets expectations for haircut severity."
+    },
+    {
+      "signal": "Number and quality of resolution applicants",
+      "implication": "A competitive bidding process can improve recovery outcomes and reduce process delays."
+    },
+    {
+      "signal": "Provisioning updates by exposed lenders",
+      "implication": "Indicates near-term P&L impact for banks and potential rerating risk."
+    }
+  ],
+  "vernacular_hindi_video_seed": {
+    "target_audience": "Semi-urban retail investor with low finance literacy",
+    "tone": "Calm, practical, non-panic",
+    "jargon_to_avoid": [
+      "haircut",
+      "credit spread",
+      "seniority waterfall",
+      "resolution value"
+    ],
+    "approved_analogy_style": "Household budget and loan repayment analogies",
+    "must_include_facts": [
+      "Bankruptcy filing is confirmed",
+      "Legal process has started with an appointed resolution professional",
+      "Equity holders face high uncertainty in insolvency outcomes"
+    ],
+    "must_not_claim": [
+      "Guaranteed recovery timeline",
+      "Guaranteed stock rebound",
+      "Exact recovery percentage before claims verification"
+    ]
+  }
+}

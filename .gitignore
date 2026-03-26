@@ -1,0 +1,8 @@
+node_modules
+.env.*
+.env.local
+.env
+.env.development.local
+.env.production.local
+ARCHITECTURE_DOCUMENT.md
+IMPACT_MODEL.md

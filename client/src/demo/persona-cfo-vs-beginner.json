@@ -1,0 +1,127 @@
+{
+  "summary": "A surprise 50 bps RBI repo rate cut has triggered a broad market reaction, but the implications differ sharply by user profile. A CFO is likely to focus on borrowing costs, bond yields, and policy signaling, while a first-generation investor needs plain-language guidance on loans, EMIs, and where not to overreact.",
+  "timeline": [
+    {
+      "date": "2026-03-20",
+      "headline": "RBI surprises with 50 bps cut",
+      "detail": "The RBI reduces the repo rate by 50 basis points, citing easing inflation pressures and the need to support growth momentum.",
+      "sentiment": 0.4,
+      "source": "ET Markets Live: RBI Monetary Policy"
+    },
+    {
+      "date": "2026-03-20",
+      "headline": "Banking stocks rally on growth hopes",
+      "detail": "Private and PSU bank stocks rise as lower rates are seen as supportive for credit growth, though margin pressure concerns persist.",
+      "sentiment": 0.35,
+      "source": "ET Markets: Banking Index Jumps After Policy"
+    },
+    {
+      "date": "2026-03-20",
+      "headline": "NBFC pack outperforms on funding relief",
+      "detail": "Rate-sensitive NBFC names outperform amid expectations of lower borrowing costs and improved demand for credit products.",
+      "sentiment": 0.5,
+      "source": "ET Prime: Winners in a Falling Rate Cycle"
+    },
+    {
+      "date": "2026-03-21",
+      "headline": "Bond yields slide after policy signal",
+      "detail": "Government bond yields decline as markets price in a potentially prolonged easing cycle and lower future funding costs.",
+      "sentiment": 0.45,
+      "source": "ET Debt Market Wrap"
+    },
+    {
+      "date": "2026-03-21",
+      "headline": "FMCG and autos gain on consumption theme",
+      "detail": "Consumer-facing sectors gain as cheaper loans are expected to support discretionary spending over coming quarters.",
+      "sentiment": 0.3,
+      "source": "ET Sector Tracker"
+    },
+    {
+      "date": "2026-03-22",
+      "headline": "Analysts warn against one-day euphoria",
+      "detail": "Brokerages caution that transmission to retail lending rates could be gradual and uneven across lenders.",
+      "sentiment": -0.15,
+      "source": "ET Experts Roundtable"
+    }
+  ],
+  "players": [
+    {
+      "name": "Reserve Bank of India",
+      "role": "Monetary policy authority",
+      "stance": "positive",
+      "note": "Signals a growth-supportive stance while keeping inflation vigilance language."
+    },
+    {
+      "name": "Commercial Banks",
+      "role": "Rate transmission channel",
+      "stance": "neutral",
+      "note": "Benefit from loan growth expectations but face margin compression risk."
+    },
+    {
+      "name": "NBFCs",
+      "role": "Rate-sensitive lenders",
+      "stance": "positive",
+      "note": "Lower wholesale funding costs could improve operating leverage."
+    },
+    {
+      "name": "Retail Borrowers",
+      "role": "End users of credit",
+      "stance": "positive",
+      "note": "Potential for lower EMIs, subject to lender-specific transmission timelines."
+    },
+    {
+      "name": "Bond Market Participants",
+      "role": "Yield curve price setters",
+      "stance": "controversial",
+      "note": "Fast repricing supports debt portfolios now, but raises duration risk if inflation surprises."
+    }
+  ],
+  "contrarian_views": [
+    {
+      "angle": "Transmission lag may blunt short-term benefits",
+      "reasoning": "Headline policy cuts do not always pass through immediately to retail borrowers. Users may overestimate near-term EMI relief and mis-time financial decisions."
+    },
+    {
+      "angle": "Rate cuts can mask weak private capex",
+      "reasoning": "A pro-growth policy move may also indicate underlying demand concerns. Corporate investment response can remain muted despite easier monetary conditions."
+    },
+    {
+      "angle": "Falling yields raise reinvestment risk",
+      "reasoning": "Debt investors may see mark-to-market gains first, but lower yields reduce future reinvestment returns, especially for conservative savers."
+    }
+  ],
+  "what_to_watch": [
+    {
+      "signal": "Home and auto loan rate pass-through by top banks",
+      "implication": "Fast pass-through strengthens the consumption recovery narrative; delays reduce immediate real-economy impact."
+    },
+    {
+      "signal": "Q1 credit growth and NIM guidance from lenders",
+      "implication": "Confirms whether loan growth offsets margin pressure in bank earnings."
+    },
+    {
+      "signal": "Next CPI print vs RBI comfort zone",
+      "implication": "Sticky inflation could limit further easing and reverse current sector leadership."
+    }
+  ],
+  "persona_outputs": {
+    "cfo": {
+      "headline": "Policy Easing Improves Funding Outlook but Margin and Demand Signals Need Monitoring",
+      "briefing": [
+        "Borrowing costs likely trend lower across floating-rate debt, improving refinancing optionality in the next two quarters.",
+        "Watch the yield curve: long-duration gains are positive for treasury books now, but duration management remains critical if inflation surprises.",
+        "Prioritize scenarios on demand elasticity and working-capital cycles rather than assuming immediate volume uplift."
+      ],
+      "format_preference": "Macro-first, numbers-first, risk-balanced"
+    },
+    "firstGenInvestor": {
+      "headline": "Loan Rates May Fall, But Not Overnight: Use This Period to Avoid Emotional Investing",
+      "briefing": [
+        "A repo cut usually helps make loans cheaper, but your bank may take time to reduce EMI rates.",
+        "Some stocks jump quickly after policy news; avoid buying only because prices moved in one day.",
+        "For beginners, a steady SIP approach is safer than trying to trade every policy announcement."
+      ],
+      "format_preference": "Plain language, practical next steps, low jargon"
+    }
+  }
+}

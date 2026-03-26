@@ -1,0 +1,419 @@
+/* ── Wrapper ── */
+
+.vp-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e4eaf2;
+  background: #0f172a;
+}
+
+/* ── Screen ── */
+
+.vp-screen {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #0f172a;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ── Brand bar ── */
+
+.vp-brand-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+.vp-et-badge {
+  background: #1a4b8c;
+  color: #ffffff;
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+  font-size: 11px;
+  padding: 2px 7px;
+  border-radius: 3px;
+  letter-spacing: 1px;
+}
+
+.vp-et-badge-large {
+  font-size: 24px;
+  padding: 8px 16px;
+  border-radius: 6px;
+}
+
+.vp-brand-text {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: sans-serif;
+  flex: 1;
+}
+
+.vp-slide-counter {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+  font-family: sans-serif;
+}
+
+/* ── Slide container ── */
+
+.vp-slide {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 32px;
+  animation: vp-slide-in 0.4s ease;
+}
+
+@keyframes vp-slide-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Title slide ── */
+
+.vp-slide-title-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: center;
+  max-width: 520px;
+}
+
+.vp-slide-category {
+  font-size: 11px;
+  font-family: sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #60a5fa;
+}
+
+.vp-slide-headline {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: 'Georgia', serif;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.vp-slide-subtext {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: sans-serif;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ── Fact slide ── */
+
+.vp-slide-fact-layout {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  max-width: 520px;
+  width: 100%;
+}
+
+.vp-slide-fact-number {
+  font-size: 52px;
+  font-weight: 700;
+  color: #60a5fa;
+  font-family: sans-serif;
+  line-height: 1;
+  flex-shrink: 0;
+  min-width: 60px;
+  text-align: center;
+}
+
+.vp-slide-fact-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.vp-slide-fact-text {
+  font-size: 17px;
+  font-weight: 600;
+  color: #ffffff;
+  font-family: 'Georgia', serif;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.vp-slide-fact-context {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: sans-serif;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ── Quote slide ── */
+
+.vp-slide-quote-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 480px;
+  text-align: center;
+}
+
+.vp-slide-quote-mark {
+  font-size: 64px;
+  color: #1a4b8c;
+  font-family: 'Georgia', serif;
+  line-height: 0.6;
+  margin-bottom: 8px;
+}
+
+.vp-slide-quote-text {
+  font-size: 16px;
+  color: #ffffff;
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.vp-slide-attribution {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: sans-serif;
+  margin: 0;
+}
+
+/* ── Summary slide ── */
+
+.vp-slide-summary-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 520px;
+  width: 100%;
+}
+
+.vp-slide-summary-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #60a5fa;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0;
+}
+
+.vp-slide-summary-points {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.vp-slide-summary-point {
+  font-size: 15px;
+  color: #ffffff;
+  font-family: 'Georgia', serif;
+  line-height: 1.5;
+  padding-left: 18px;
+  position: relative;
+}
+
+.vp-slide-summary-point::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 6px;
+  height: 6px;
+  background: #1a4b8c;
+  border-radius: 50%;
+}
+
+/* ── Outro slide ── */
+
+.vp-slide-outro-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.vp-slide-outro-text {
+  font-size: 18px;
+  color: #ffffff;
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.vp-slide-outro-sub {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.4);
+  font-family: sans-serif;
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+
+/* ── Progress bars ── */
+
+.vp-progress-bar {
+  height: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+}
+
+.vp-progress-fill {
+  height: 100%;
+  background: #1a4b8c;
+  transition: width 0.3s ease;
+}
+
+.vp-slide-progress {
+  height: 2px;
+  background: rgba(255, 255, 255, 0.08);
+  flex-shrink: 0;
+}
+
+.vp-slide-progress-fill {
+  height: 100%;
+  background: #60a5fa;
+  transition: width 0.1s linear;
+}
+
+/* ── Controls ── */
+
+.vp-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: #1e293b;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.vp-ctrl-btn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  transition: color 0.15s;
+}
+
+.vp-ctrl-btn:hover:not(:disabled) {
+  color: #ffffff;
+}
+
+.vp-ctrl-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.vp-play-btn {
+  width: 36px;
+  height: 36px;
+  background: #1a4b8c;
+  border: none;
+  border-radius: 50%;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+
+.vp-play-btn:hover {
+  background: #153d75;
+}
+
+.vp-vol-indicator {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: auto;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.vp-vol-text {
+  font-size: 11px;
+  font-family: sans-serif;
+}
+
+/* ── Thumbnails ── */
+
+.vp-thumbnails {
+  display: flex;
+  gap: 6px;
+  padding: 10px 16px;
+  background: #1e293b;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.vp-thumbnails::-webkit-scrollbar {
+  display: none;
+}
+
+.vp-thumb {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 11px;
+  font-family: sans-serif;
+  cursor: pointer;
+  transition: all 0.15s;
+  flex-shrink: 0;
+}
+
+.vp-thumb:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+.vp-thumb-active {
+  background: #1a4b8c;
+  border-color: #1a4b8c;
+  color: #ffffff;
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 480px) {
+  .vp-slide {
+    padding: 16px 20px;
+  }
+
+  .vp-slide-headline {
+    font-size: 17px;
+  }
+
+  .vp-slide-fact-number {
+    font-size: 36px;
+  }
+}

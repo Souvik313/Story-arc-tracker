@@ -1,0 +1,163 @@
+/* ── Wrapper ── */
+
+.persona-wrapper {
+  width: 100%;
+  max-width: 680px;
+  margin-top: 36px;
+}
+
+/* ── Heading ── */
+
+.persona-heading {
+  font-size: 13px;
+  font-family: sans-serif;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0 0 4px;
+  text-align: center;
+}
+
+.persona-subheading {
+  font-size: 12px;
+  font-family: sans-serif;
+  color: #94a3b8;
+  margin: 0 0 16px;
+  text-align: center;
+}
+
+/* ── Grid ── */
+
+.persona-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+/* ── Card ── */
+
+.persona-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  border: 1.5px solid #e4eaf2;
+  border-radius: 12px;
+  padding: 16px 12px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  text-align: center;
+  position: relative;
+}
+
+.persona-card:hover {
+  border-color: #c7d8f0;
+  background: #f8fafc;
+}
+
+.persona-card-active {
+  border-color: #1a4b8c;
+  background: #eaf0fb;
+}
+
+.persona-card-active:hover {
+  background: #e0ebf8;
+}
+
+/* ── Icon ── */
+
+.persona-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: #f1f5f9;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.18s ease;
+  flex-shrink: 0;
+}
+
+.persona-icon-active {
+  background: #1a4b8c;
+  color: #ffffff;
+}
+
+/* ── Text ── */
+
+.persona-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+}
+
+.persona-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #0f172a;
+  font-family: sans-serif;
+  line-height: 1.3;
+}
+
+.persona-card-active .persona-label {
+  color: #1a4b8c;
+}
+
+.persona-desc {
+  font-size: 11px;
+  color: #94a3b8;
+  font-family: sans-serif;
+  line-height: 1.4;
+}
+
+/* ── Check icon ── */
+
+.persona-check {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #1a4b8c;
+}
+
+/* ── Saved confirmation ── */
+
+.persona-saved {
+  font-size: 12px;
+  font-family: sans-serif;
+  color: #15803d;
+  background: #dcfce7;
+  border-radius: 8px;
+  padding: 8px 14px;
+  margin-top: 12px;
+  text-align: center;
+  animation: persona-fade-in 0.2s ease;
+}
+
+@keyframes persona-fade-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 520px) {
+  .persona-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .persona-card {
+    flex-direction: row;
+    text-align: left;
+    padding: 14px;
+  }
+
+  .persona-text {
+    align-items: flex-start;
+  }
+
+  .persona-icon {
+    flex-shrink: 0;
+  }
+}

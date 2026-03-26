@@ -1,0 +1,270 @@
+/* ── Wrapper ── */
+
+.timeline-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Legend ── */
+
+.timeline-legend {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 16px;
+  background: #f8fafc;
+  border: 1px solid #e4eaf2;
+  border-radius: 8px;
+  width: fit-content;
+}
+
+.timeline-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #64748b;
+  font-family: sans-serif;
+}
+
+.timeline-legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ── List ── */
+
+.timeline-list {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Single event row ── */
+
+.timeline-event {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* ── Connector (dot + vertical line) ── */
+
+.timeline-connector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  padding-top: 18px;
+}
+
+.timeline-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2.5px solid #fff;
+  flex-shrink: 0;
+  z-index: 1;
+  box-shadow: 0 0 0 2px currentColor;
+}
+
+.timeline-dot-positive {
+  background: #16a34a;
+  color: #16a34a;
+}
+
+.timeline-dot-neutral {
+  background: #64748b;
+  color: #64748b;
+}
+
+.timeline-dot-negative {
+  background: #dc2626;
+  color: #dc2626;
+}
+
+.timeline-line {
+  width: 2px;
+  flex: 1;
+  min-height: 24px;
+  background: #e4eaf2;
+  margin-top: 4px;
+}
+
+/* ── Card ── */
+
+.timeline-card {
+  flex: 1;
+  background: #ffffff;
+  border: 1px solid #e4eaf2;
+  border-radius: 12px;
+  padding: 18px 20px 14px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+  border-left: 3px solid transparent;
+}
+
+.timeline-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.timeline-card-positive {
+  border-left-color: #16a34a;
+}
+
+.timeline-card-neutral {
+  border-left-color: #94a3b8;
+}
+
+.timeline-card-negative {
+  border-left-color: #dc2626;
+}
+
+.timeline-card-expanded {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+}
+
+/* ── Card top row ── */
+
+.timeline-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* ── Date ── */
+
+.timeline-date {
+  font-size: 12px;
+  color: #94a3b8;
+  font-family: sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+/* ── Sentiment badge ── */
+
+.timeline-sentiment-badge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-family: sans-serif;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.2px;
+}
+
+.timeline-badge-positive {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.timeline-badge-neutral {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.timeline-badge-negative {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/* ── Headline ── */
+
+.timeline-headline {
+  font-size: 15px;
+  font-weight: bold;
+  color: #0f172a;
+  line-height: 1.45;
+  font-family: 'Georgia', serif;
+  margin-bottom: 2px;
+}
+
+/* ── Expanded detail ── */
+
+.timeline-detail {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #f1f5f9;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.timeline-detail-text {
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.7;
+  font-family: 'Georgia', serif;
+  font-style: italic;
+}
+
+.timeline-source {
+  font-size: 11px;
+  color: #94a3b8;
+  font-family: sans-serif;
+  font-style: normal;
+}
+
+.timeline-source-inline {
+  margin: 2px 0 0;
+}
+
+/* ── Toggle button ── */
+
+.timeline-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  color: #1a4b8c;
+  font-size: 12px;
+  font-family: sans-serif;
+  font-weight: 600;
+  padding: 6px 0 0;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+.timeline-toggle-btn:hover {
+  color: #153d75;
+}
+
+/* ── Empty state ── */
+
+.timeline-empty {
+  font-size: 14px;
+  color: #94a3b8;
+  font-family: sans-serif;
+  padding: 32px 0;
+  text-align: center;
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 480px) {
+  .timeline-event {
+    gap: 14px;
+  }
+
+  .timeline-card {
+    padding: 14px 16px 12px;
+  }
+
+  .timeline-headline {
+    font-size: 14px;
+  }
+
+  .timeline-legend {
+    gap: 14px;
+  }
+}

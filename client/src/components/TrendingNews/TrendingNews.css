@@ -1,0 +1,245 @@
+/* ── Wrapper ── */
+
+.trending-wrapper {
+  width: 100%;
+  max-width: 680px;
+  margin-top: 32px;
+  background: #ffffff;
+  border: 1px solid #e4eaf2;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+/* ── Header ── */
+
+.trending-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  border-bottom: 1px solid #e4eaf2;
+  background: #f8fafc;
+}
+
+.trending-header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.trending-header-icon {
+  color: #1a4b8c;
+  flex-shrink: 0;
+}
+
+.trending-header-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #0f172a;
+  font-family: sans-serif;
+}
+
+.trending-updated {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 11px;
+  color: #94a3b8;
+  font-family: sans-serif;
+}
+
+.trending-refresh-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #94a3b8;
+  padding: 4px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  transition: color 0.15s;
+}
+
+.trending-refresh-btn:hover:not(:disabled) {
+  color: #1a4b8c;
+}
+
+.trending-refresh-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ── Spin animation for refresh ── */
+
+.trending-spin {
+  animation: trending-rotate 0.8s linear infinite;
+}
+
+@keyframes trending-rotate {
+  to { transform: rotate(360deg); }
+}
+
+/* ── List ── */
+
+.trending-list {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Skeleton loading ── */
+
+.trending-skeleton {
+  height: 64px;
+  margin: 1px 0;
+  background: linear-gradient(
+    90deg,
+    #f1f5f9 25%,
+    #e4eaf2 50%,
+    #f1f5f9 75%
+  );
+  background-size: 200% 100%;
+  animation: trending-shimmer 1.2s ease-in-out infinite;
+}
+
+@keyframes trending-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ── Story item ── */
+
+.trending-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 18px;
+  background: #ffffff;
+  border: none;
+  border-bottom: 1px solid #f1f5f9;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s ease;
+  width: 100%;
+}
+
+.trending-item:last-child {
+  border-bottom: none;
+}
+
+.trending-item:hover {
+  background: #f8fafc;
+}
+
+.trending-item:hover .trending-item-arrow {
+  color: #1a4b8c;
+  transform: translateX(3px);
+}
+
+/* ── Item left section ── */
+
+.trending-item-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+/* ── Index number ── */
+
+.trending-item-index {
+  font-size: 13px;
+  font-weight: 700;
+  color: #cbd5e1;
+  font-family: sans-serif;
+  min-width: 18px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* ── Content ── */
+
+.trending-item-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  flex: 1;
+}
+
+.trending-item-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #0f172a;
+  font-family: 'Georgia', serif;
+  line-height: 1.4;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.trending-item:hover .trending-item-title {
+  color: #1a4b8c;
+}
+
+/* ── Meta row ── */
+
+.trending-item-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.trending-item-category {
+  font-size: 10px;
+  font-family: sans-serif;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 20px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.trending-item-time {
+  font-size: 11px;
+  color: #94a3b8;
+  font-family: sans-serif;
+}
+
+/* ── Arrow ── */
+
+.trending-item-arrow {
+  color: #cbd5e1;
+  flex-shrink: 0;
+  transition: all 0.15s ease;
+}
+
+/* ── Fallback note ── */
+
+.trending-fallback-note {
+  font-size: 11px;
+  color: #94a3b8;
+  font-family: sans-serif;
+  text-align: center;
+  padding: 8px 18px 14px;
+  margin: 0;
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 480px) {
+  .trending-wrapper {
+    border-radius: 10px;
+  }
+
+  .trending-item {
+    padding: 12px 14px;
+  }
+
+  .trending-item-title {
+    font-size: 13px;
+  }
+}
