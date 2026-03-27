@@ -264,6 +264,16 @@ const checkFfmpeg = async () => {
 
 // Find a font that supports Devanagari (Hindi) on the system
 const findDevanagariFont = async () => {
+  const bundledFontPath = path.join(process.cwd(), "fonts", "NotoSansDevanagari-Regular.ttf");
+
+  try {
+    await fs.access(bundledFontPath);
+    console.log(`[VERNACULAR] Found bundled Devanagari font: ${bundledFontPath}`);
+    return bundledFontPath;
+  } catch {
+    console.log(`[VERNACULAR] Bundled font not found at: ${bundledFontPath}`);
+  }
+
   const windowsFonts = [
     'C:/Windows/Fonts/mangal.ttf',      // Mangal — standard Hindi font on Windows
     'C:/Windows/Fonts/aparaj.ttf',      // Aparajita
