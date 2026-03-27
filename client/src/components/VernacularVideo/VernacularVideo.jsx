@@ -8,10 +8,14 @@ import {
   FileText,
   Video,
   RefreshCw,
+  Shield,
 } from "lucide-react";
 import { useVernacularVideo } from "../../hooks/useVernacularVideo";
+import VideoPlayer from "../VideoPlayer/VideoPlayer";
 import "./VernacularVideo.css";
+
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5001";
+
 const LANGUAGES = [
   { code: "hi", label: "हिंदी", name: "Hindi" },
   { code: "bn", label: "বাংলা", name: "Bengali" },
@@ -40,11 +44,12 @@ const VernacularVideo = ({ articleText, sourceTitle, onClose }) => {
     setInputText(articleText || "");
     setInputSource(sourceTitle || "");
     setSelectedLang("hi");
+    setShowVideo(false);
   };
 
   const videoUrl = data?.demoVideo?.rendered
-  ? `${import.meta.env.VITE_API_URL || 'http://localhost:5001'}/videos/${data.demoVideo.finalVideoPath?.split(/[/\\]/).pop()}`
-  : null;
+    ? `${API_URL}/videos/${data.demoVideo.finalVideoPath?.split(/[/\\]/).pop()}`
+    : null;
 
   const isReady = inputText.trim().length >= 120;
   const charCount = inputText.length;
@@ -62,9 +67,7 @@ const VernacularVideo = ({ articleText, sourceTitle, onClose }) => {
               <p className="vv-header-sub">ET news in your language</p>
             </div>
           </div>
-          <button className="vv-close-btn" onClick={() => onClose?.()}>
-            ×
-          </button>
+          <button className="vv-close-btn" onClick={() => onClose?.()}>×</button>
         </div>
 
         <div className="vv-body">
@@ -72,8 +75,6 @@ const VernacularVideo = ({ articleText, sourceTitle, onClose }) => {
           {/* Input form */}
           {!data && !loading && (
             <div className="vv-form">
-
-              {/* Language selector */}
               <div className="vv-field">
                 <label className="vv-label">Select language</label>
                 <div className="vv-lang-grid">
@@ -90,7 +91,6 @@ const VernacularVideo = ({ articleText, sourceTitle, onClose }) => {
                 </div>
               </div>
 
-              {/* Source title */}
               <div className="vv-field">
                 <label className="vv-label">Source title (optional)</label>
                 <input
@@ -102,7 +102,6 @@ const VernacularVideo = ({ articleText, sourceTitle, onClose }) => {
                 />
               </div>
 
-              {/* Article text */}
               <div className="vv-field">
                 <label className="vv-label">Paste the full article text</label>
                 <textarea
@@ -113,7 +112,8 @@ const VernacularVideo = ({ articleText, sourceTitle, onClose }) => {
                   rows={8}
                 />
                 <div className={`vv-char-count ${isReady ? "vv-char-ready" : ""}`}>
-                  {charCount} characters {isReady ? "— ready" : `— need atleast ${120 - charCount} more`}
+                  {charCount} characters{" "}
+                  {isReady ? "— ready" : `— need at least ${120 - charCount} more`}
                 </div>
               </div>
 
@@ -122,7 +122,7 @@ const VernacularVideo = ({ articleText, sourceTitle, onClose }) => {
                 onClick={handleGenerate}
                 disabled={!isReady}
               >
-                Generate {LANGUAGES.find(l => l.code === selectedLang)?.name} video
+                Generate {LANGUAGES.find((l) => l.code === selectedLang)?.name} video
               </button>
             </div>
           )}
@@ -133,7 +133,8 @@ const VernacularVideo = ({ articleText, sourceTitle, onClose }) => {
               <div className="vv-spinner" />
               <p className="vv-loading-text">Generating video script...</p>
               <p className="vv-loading-sub">
-                Translating and culturally adapting for {LANGUAGES.find(l => l.code === selectedLang)?.name}
+                Translating and culturally adapting for{" "}
+                {LANGUAGES.find((l) => l.code === selectedLang)?.name}
               </p>
             </div>
           )}
@@ -167,9 +168,62 @@ const VernacularVideo = ({ articleText, sourceTitle, onClose }) => {
                   <FileText size={13} />
                   <span>{data.facts?.key_facts?.length || 0} key facts extracted</span>
                 </div>
+                {data.factGuard?.is_factually_safe && (
+                  <div className="vv-meta-item vv-meta-safe">
+                    <Shield size={13} />
+                    <span>Fact verified</span>
+                  </div>
+                )}
               </div>
 
-              {/* Script */}
+              {/* ── Animated VideoPlayer — always shown when slides exist ── */}
+              {data.slides?.length > 0 && (
+                <div className="vv-player-section">
+                  <p className="vv-section-label">Animated video presentation</p>
+                  <VideoPlayer
+                    slides={data.slides}
+                    title={data.script?.title_hi}
+                  />
+                </div>
+              )}
+
+              {/* ── MP4 video — only shown when FFmpeg rendered (local only) ── */}
+              {data.demoVideo?.rendered && videoUrl && (
+                <div className="vv-video-section">
+                  <div className="vv-video-actions">
+                    <button
+                      className={`vv-play-btn ${showVideo ? "vv-play-btn-active" : ""}`}
+                      onClick={() => setShowVideo((prev) => !prev)}
+                    >
+                      <Play size={14} />
+                      {showVideo ? "Hide video" : "Play MP4"}
+                    </button>
+                    <a
+                      className="vv-download-btn"
+                      href={videoUrl}
+                      download={data.demoVideo.finalVideoPath?.split(/[/\\]/).pop()}
+                    >
+                      <Download size={14} />
+                      Download MP4
+                    </a>
+                  </div>
+                  {showVideo && (
+                    <div className="vv-video-player-wrap">
+                      <video
+                        className="vv-video-player"
+                        controls
+                        autoPlay
+                        src={videoUrl}
+                        onError={() => console.error("Video failed to load:", videoUrl)}
+                      >
+                        Your browser does not support video playback.
+                      </video>
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* Script card */}
               <div className="vv-script-card">
                 <h3 className="vv-script-title">{data.script?.title_hi}</h3>
                 <p className="vv-script-text">{data.script?.script_hi}</p>
@@ -184,49 +238,22 @@ const VernacularVideo = ({ articleText, sourceTitle, onClose }) => {
                     </ol>
                   </div>
                 )}
-              </div>
 
-              {/* Video actions */}
-              {data?.demoVideo?.rendered && videoUrl && (
-                <div className="vv-video-section">
-              
-                  {/* Header row — play button + download button side by side */}
-                  <div className="vv-video-actions">
-                    <button
-                      className={`vv-play-btn ${showVideo ? "vv-play-btn-active" : ""}`}
-                      onClick={() => setShowVideo((prev) => !prev)}
-                    >
-                      <Play size={14} />
-                      {showVideo ? "Hide video" : "Play video"}
-                    </button>
-              
-                    <a
-                      className="vv-download-btn"
-                      href={videoUrl}
-                      download={data.demoVideo.finalVideoPath?.split(/[/\\]/).pop()}
-                    >
-                      <Download size={14} />
-                      Download MP4
-                    </a>
-                  </div>
-              
-                  {/* Video player — shown when play is clicked */}
-                  {showVideo && (
-                    <div className="vv-video-player-wrap">
-                      <video
-                        className="vv-video-player"
-                        controls
-                        autoPlay
-                        src={videoUrl}
-                        onError={() => console.error("Video failed to load:", videoUrl)}
-                      >
-                        Your browser does not support video playback.
-                      </video>
+                {data.script?.jargon_replacements?.length > 0 && (
+                  <div className="vv-jargon">
+                    <p className="vv-jargon-label">Jargon simplified</p>
+                    <div className="vv-jargon-grid">
+                      {data.script.jargon_replacements.map((jr, i) => (
+                        <div key={i} className="vv-jargon-item">
+                          <span className="vv-jargon-en">{jr.english_jargon}</span>
+                          <span className="vv-jargon-arrow">→</span>
+                          <span className="vv-jargon-hi">{jr.simple_hindi}</span>
+                        </div>
+                      ))}
                     </div>
-                  )}
-              
-                </div>
-              )}
+                  </div>
+                )}
+              </div>
 
               {/* Key facts */}
               {data.facts?.key_facts?.length > 0 && (
@@ -240,7 +267,7 @@ const VernacularVideo = ({ articleText, sourceTitle, onClose }) => {
                 </div>
               )}
 
-              {/* New article button */}
+              {/* New article */}
               <button className="vv-new-btn" onClick={handleReset}>
                 <RefreshCw size={13} />
                 Process new article
